@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual & Product Designer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 3D Model Viewer Script -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        dark: '#0a0a0a',
+                        darker: '#050505',
+                        accent: '#e5e5e5',
+                        muted: '#888888'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #e5e5e5;
+        }
+        
+        /* Smooth Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+        /* Masonry Grid Utilities (For Concept Art) */
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 640px) { .masonry-grid { column-count: 2; } }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Image Hover Effects */
+        .art-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.25rem;
+            background-color: #111;
+        }
+        .art-card-img-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), filter 0.7s ease;
+            filter: grayscale(20%);
+        }
+        .art-card-img-wrapper:hover img {
+            transform: scale(1.03);
+            filter: grayscale(0%);
+        }
+        
+        model-viewer {
+            width: 100%;
+            height: 400px;
+            background-color: #0a0a0a;
+            outline: none;
+        }
+        @media (min-width: 1024px) {
+            model-viewer { height: 100%; min-height: 500px; }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-darker text-base font-sans relative">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 mix-blend-difference px-6 py-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#home" class="text-xl font-serif italic tracking-wide text-white">AK.</a>
+            <div class="hidden md:flex space-x-8 text-sm tracking-widest uppercase text-white">
+                <a href="#about" class="hover:text-muted transition-colors">Resume</a>
+                <a href="#work" class="hover:text-muted transition-colors">Selected Works</a>
+                <a href="#contact" class="hover:text-muted transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center px-6 relative pt-20">
+        <div class="max-w-7xl mx-auto w-full">
+            <p class="text-muted tracking-[0.3em] uppercase text-xs mb-6">Visual & Product Designer</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-accent leading-[1.1] max-w-4xl">
+                Crafting worlds through <span class="italic text-muted">lines, light, and form.</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Resume / About Section -->
+    <section id="about" class="py-32 px-6 bg-dark">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <div class="lg:col-span-5">
+                <h2 class="text-3xl md:text-4xl font-serif mb-8 text-accent">Curriculum Vitae</h2>
+                <p class="text-muted font-light leading-relaxed mb-8 text-lg">
+                    I am a design student and visual artist focused on narrative-driven imagery and functional object design. My work bridges the gap between imagination and reality, utilizing both traditional techniques and digital workflows to create compelling visual experiences and tangible products.
+                </p>
+                <a href="#" class="inline-flex items-center gap-3 text-sm uppercase tracking-widest border-b border-accent pb-1 hover:text-muted hover:border-muted transition-colors">
+                    Download Full Resume
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                </a>
+            </div>
+            
+            <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Specialization Areas -->
+                <div>
+                    <h3 class="text-xs uppercase tracking-[0.2em] text-muted mb-6 border-b border-white/10 pb-2">Core Disciplines</h3>
+                    <ul class="space-y-6">
+                        <li>
+                            <h4 class="text-lg font-medium text-accent mb-1">Product & Footwear Design</h4>
+                            <p class="text-sm text-muted font-light">3D modeling, CMF specification, and functional aesthetics.</p>
+                        </li>
+                        <li>
+                            <h4 class="text-lg font-medium text-accent mb-1">Computational Design</h4>
+                            <p class="text-sm text-muted font-light">Parametric modeling and algorithmic form generation via Python.</p>
+                        </li>
+                        <li>
+                            <h4 class="text-lg font-medium text-accent mb-1">Concept Art</h4>
+                            <p class="text-sm text-muted font-light">Environment design, prop ideation, and mood explorations.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Tools & Education -->
+                <div>
+                    <h3 class="text-xs uppercase tracking-[0.2em] text-muted mb-6 border-b border-white/10 pb-2">Tools & Education</h3>
+                    <ul class="space-y-6">
+                        <li>
+                            <h4 class="text-lg font-medium text-accent mb-1">Software</h4>
+                            <p class="text-sm text-muted font-light">Blender, Python, Photoshop, Procreate, Illustrator.</p>
+                        </li>
+                        <li>
+                            <h4 class="text-lg font-medium text-accent mb-1">Education</h4>
+                            <p class="text-sm text-muted font-light">B.Des Student<br>Focus in Visual Communication & Product Design</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="work" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="mb-24">
+                <h2 class="text-5xl md:text-6xl font-serif text-center mb-6">Selected Works</h2>
+                <p class="text-center text-muted max-w-2xl mx-auto font-light">A curated selection of explorations, ranging from world-building concepts and polished illustrations to functional product designs.</p>
+            </div>
+
+            <!-- DYNAMIC Product Design Section -->
+            <div class="mb-24">
+                <h3 class="text-2xl font-serif mb-8 border-l-2 border-accent pl-4">Product Design & Engineering</h3>
+                
+                <!-- JavaScript will inject the project cards into this div -->
+                <div id="dynamic-product-grid" class="flex flex-col gap-16">
+                    <!-- Cards load here -->
+                </div>
+                
+            </div>
+
+            <!-- Concept Art Section -->
+            <div class="mb-24">
+                <h3 class="text-2xl font-serif mb-8 border-l-2 border-accent pl-4">Concept Art & Illustration</h3>
+                <div class="masonry-grid">
+                    <div class="masonry-item art-card">
+                        <div class="art-card-img-wrapper">
+                            <img src="https://placehold.co/800x600/1a1a1a/e5e5e5?text=Sci-Fi+Environment" alt="Concept Art 1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-20 px-6 border-t border-white/5 bg-dark">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-12">
+            <div>
+                <h2 class="text-3xl md:text-5xl font-serif mb-6">Let's create <br><span class="italic text-muted">something unique.</span></h2>
+                <a href="mailto:hello@example.com" class="text-lg font-light hover:text-muted transition-colors border-b border-transparent hover:border-muted pb-1">hello@example.com</a>
+            </div>
+            
+            <div class="flex flex-col items-start md:items-end gap-4 text-sm tracking-widest uppercase">
+                <a href="https://github.com" target="_blank" class="hover:text-muted transition-colors">GitHub</a>
+                <a href="https://artstation.com" target="_blank" class="hover:text-muted transition-colors">ArtStation</a>
+                <a href="https://instagram.com" target="_blank" class="hover:text-muted transition-colors">Instagram</a>
+                <p class="text-xs text-muted mt-8 normal-case tracking-normal font-light">© 2026 Animesh Kukreti.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Full-Screen Image Modal (Lightbox) -->
+    <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-black/95 flex items-center justify-center p-4 md:p-12 backdrop-blur-sm transition-opacity" onclick="closeModal()">
+        <button class="absolute top-6 right-6 text-white hover:text-accent p-2 z-50" onclick="closeModal()" title="Close">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <img id="modalImage" src="" alt="Expanded View" class="max-w-full max-h-full object-contain cursor-zoom-out shadow-2xl" onclick="event.stopPropagation();">
+    </div>
+
+    <!-- DYNAMIC LOCAL FETCHING SCRIPT -->
+    <script>
+        // 1. YOUR TEXT DATABASE
+        // You no longer need to type the image name at all. 
+        // Just name your image the exact same as your folder (e.g., folder: design_1, image: design_1.jpg OR design_1.png)
+        const portfolioProjects = [
+            {
+                folderName: "design_1",
+                title: "Project V-Grip",
+                subtitle: "Hybrid Performance Footwear",
+                modelName: "model.glb",
+                problem: "Budget-conscious students often compromise between clean lifestyle aesthetics for the classroom and athletic grip needed for spontaneous sports. Existing hybrid shoes fail to provide necessary biomechanical traction without looking overly aggressive.",
+                ideation: "The approach centered on masking high-level sports biomechanics beneath a minimalist, lifestyle-oriented upper. I explored 15+ thumbnail iterations balancing organic runner silhouettes with structured casual joggers before landing on the current dynamic drop-toe profile.",
+                materials: "The upper utilizes an abrasive-resistant Canvas for midfoot lockdown, overlaid with synthetic leather panels for structural integrity. A breathable athletic mesh is mapped over the toe box to allow for natural toe splay and heat venting during activity.",
+                cmf: "Dusty Slate Blue, Tactical Olive, Muted Blush, and Dark Gray.",
+                innovation: "The outsole features computationally mapped 'Vacuum-Pads' molded from silicone rubber. Upon heel strike, the chambers compress to absorb shock. As the user pivots, negative pressure creates a temporary micro-vacuum for instant, high-friction grip."
+            }
+            // TO ADD A NEW DESIGN LATER, UNCOMMENT AND EDIT THIS:
+            // ,
+            // {
+            //     folderName: "design_2",
+            //     title: "Your Project Name",
+            //     subtitle: "What is it?",
+            //     modelName: "model.glb",
+            //     problem: "Enter the problem you are solving here...",
+            //     ideation: "Enter your ideation and research process here...",
+            //     materials: "Enter material specifics here...",
+            //     cmf: "Enter color palette names here...",
+            //     innovation: "Enter the core technical or algorithmic innovation here..."
+            // }
+        ];
+
+        // 2. FETCH AND GENERATE AUTOMATICALLY
+        function loadLocalProjects() {
+            const gridContainer = document.getElementById('dynamic-product-grid');
+
+            portfolioProjects.forEach((projectData) => {
+                const basePath = `./designs/shoes/${projectData.folderName}/`;
+                // The script automatically assumes the image base name matches the folder name
+                const imageBaseUrl = basePath + projectData.folderName; 
+                const modelUrl = basePath + projectData.modelName;
+
+                // The image tag tries .jpg first, then .png, then .jpeg, then placeholder.
+                // Added cursor-zoom-in and onclick="openModal(this.src)" to launch the lightbox.
+                const cardHTML = `
+                    <div class="bg-[#0f0f0f] border border-white/5 rounded-xl overflow-hidden flex flex-col">
+                        
+                        <!-- Header -->
+                        <div class="p-8 md:p-12 border-b border-white/5 text-center">
+                            <span class="text-xs tracking-widest uppercase text-muted mb-3 block">${projectData.subtitle}</span>
+                            <h3 class="text-4xl md:text-5xl font-serif text-accent">${projectData.title}</h3>
+                        </div>
+
+                        <!-- Media -->
+                        <div class="grid grid-cols-1 lg:grid-cols-2 border-b border-white/5">
+                            
+                            <!-- 3D Interactive Model -->
+                            <div class="relative border-b lg:border-b-0 lg:border-r border-white/5 bg-black">
+                                <model-viewer 
+                                    src="${modelUrl}" 
+                                    camera-controls auto-rotate shadow-intensity="1"
+                                    style="--poster-color: transparent;">
+                                    <div class="absolute top-4 left-4 bg-white/10 text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full text-white backdrop-blur-md border border-white/20">
+                                        Interactive 3D Concept
+                                    </div>
+                                </model-viewer>
+                            </div>
+
+                            <!-- 2D Technical Sketch -->
+                            <div class="art-card-img-wrapper h-full flex items-center justify-center bg-[#111]">
+                                <img src="${imageBaseUrl}.jpg" alt="${projectData.title} Technical Layout" 
+                                     class="w-full h-full object-contain p-4 cursor-zoom-in hover:opacity-80 transition-opacity"
+                                     onclick="openModal(this.src)"
+                                     onerror="if(this.src.endsWith('.jpg')) { this.src='${imageBaseUrl}.png'; } else if(this.src.endsWith('.png')) { this.src='${imageBaseUrl}.jpeg'; } else { this.onerror=null; this.src='https://placehold.co/800x600/1a1a1a/e5e5e5?text=Image+Not+Found'; }">
+                            </div>
+                        </div>
+
+                        <!-- Text Details -->
+                        <div class="p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-12 text-sm font-light leading-relaxed text-muted">
+                            <div>
+                                <h4 class="text-white font-medium mb-3 uppercase tracking-widest text-xs">The Problem</h4>
+                                <p class="mb-8">${projectData.problem}</p>
+                                
+                                <h4 class="text-white font-medium mb-3 uppercase tracking-widest text-xs">Ideation & Form</h4>
+                                <p>${projectData.ideation}</p>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-3 uppercase tracking-widest text-xs">Materials & CMF</h4>
+                                <p class="mb-4">${projectData.materials}</p>
+                                <p class="mb-8"><strong class="text-accent font-medium">Palette:</strong> ${projectData.cmf}</p>
+                                
+                                <h4 class="text-white font-medium mb-3 uppercase tracking-widest text-xs">Technical Innovation</h4>
+                                <p>${projectData.innovation}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                gridContainer.insertAdjacentHTML('beforeend', cardHTML);
+            });
+        }
+
+        // 3. LIGHTBOX LOGIC
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            
+            // Set the modal image source to whatever image was clicked
+            modalImg.src = imageSrc;
+            
+            // Show the modal and stop the background from scrolling
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            
+            // Hide the modal and allow background scrolling again
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Execute the build function when the page loads
+        document.addEventListener("DOMContentLoaded", loadLocalProjects);
+    </script>
+</body>
+</html>
